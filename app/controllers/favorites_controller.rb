@@ -6,16 +6,16 @@ class FavoritesController < ApplicationController
 
     # do we need a show method if we could just link to the product's show page?
 
+    def create
+        favorite = Favorite.create!(favorite_params)
+        render json: favorite, except: [:created_at, :updated_at]
+    end
+
     def update
         favorite = Favorite.find(params[:id])
         favorite.update!(favorite_params)
         render json: {}
     end 
-
-    def create
-        favorite = Favorite.create!(favorite_params)
-        render json: favorite
-    end
 
     def destroy
         favorite = Favorite.find(params[:id])
