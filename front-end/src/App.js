@@ -1,14 +1,14 @@
 // import TestCard from './Components/TestCard.js';
 import React from 'react';
+import UserContainer from './Containers/UserContainer.js';
 import CartContainer from './Containers/CartContainer.js';
 import FavoriteContainer from './Containers/FavoriteContainer.js';
-import UserContainer from './Containers/UserContainer.js';
 import ProductContainer from './Containers/ProductContainer.js';
 
 class App extends React.Component {
 
   render(){
-    return (
+    return(
       <div className="App">
         {/* <TestCard /> */}
         <UserContainer />
@@ -16,7 +16,7 @@ class App extends React.Component {
         <FavoriteContainer />
         <ProductContainer />
       </div>
-    );
+    )
   }
 }
 
