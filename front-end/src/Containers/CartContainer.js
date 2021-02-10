@@ -2,8 +2,11 @@ import React from 'react';
 import CartCard from '../Components/CartCard.js';
 
 class CartContainer extends React.Component {
-    // where should state be tracked? App?
-    
+    // state may go in app - then it would become a prop
+    state = {
+        cartApi: []
+    }
+
     renderCarts = () => {
         return this.state.cartApi.map((el) => <CartCard key={el.id} cart={el} />)
     }

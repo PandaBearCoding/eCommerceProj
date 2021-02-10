@@ -2,7 +2,10 @@ import React from 'react';
 import FavoriteCard from '../Components/FavoriteCard.js';
 
 class FavoriteContainer extends React.Component {
-    // where should state be tracked? App?
+    // state may go in app - then it would become a prop
+    state = {
+        favoriteApi: []
+    }
 
     renderFavorites = () => {
         return this.state.favoriteApi.map((el) => <FavoriteCard key={el.id} favorite={el} />)
