@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
     def update
         favorite = Favorite.find(params[:id])
         favorite.update!(favorite_params)
-        render json: {}
+        render json: favorite
     end 
 
     def destroy

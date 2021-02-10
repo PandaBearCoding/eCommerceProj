@@ -11,13 +11,13 @@ class CartsController < ApplicationController
 
     def create
         cart = Cart.create!(cart_params)
-        render json: cart, , except: [:created_at, :updated_at]
+        render json: cart, except: [:created_at, :updated_at]
     end
 
     def update
         cart = Cart.find(params[:id])
         cart.update!(cart_params)
-        render json: {}
+        render json: cart
     end 
 
     def destroy
