@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {Button, Box, Grid} from '@material-ui/core';
+import {Button, Box, Grid, Paper} from '@material-ui/core';
 
-const Test = (props) => {
+const TestCard = (props) => {
     const [testState, setTestState] = useState("TEST")
     const [counter, setCounter] = useState(0)
         //name of state //how to change state //initial value of state
@@ -15,15 +15,19 @@ const Test = (props) => {
     const logCoolThings = () => {
         console.log('cool things')
         setCounter(counter + 1)
-        
     }
 
     return(
         <div>
             <Button variant="contained" color="primary" onClick={() => logCoolThings()}>{testState}</Button>
             You Clicked {counter} times!
+            <Grid container spacing={2}>
+                <Grid item xs='3'> <Paper variant="outlined" elevation={100}>TEST</Paper></Grid>
+                <Grid item xs='6'> <Paper variant="outlined" elevation={100}>TEST</Paper></Grid>
+                <Grid item xs='3'> <Paper variant="outlined" elevation={100}>TEST</Paper></Grid>
+            </Grid>
         </div>
     )
 }
 
-export default Test;
+export default TestCard;
