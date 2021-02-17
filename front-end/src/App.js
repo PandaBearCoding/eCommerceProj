@@ -21,9 +21,9 @@ class App extends React.Component {
   }
 
   cartDeleteHandler = (cartObj) => {
-    console.log("Cart Item To Delete", cartObj.id)
+    // console.log("Cart Item To Delete", cartObj.id)
     let relationship = this.state.user.carts.find(cart => cart.id && cart.user_id === this.state.user.id && cart.product_id === cartObj.id)
-    console.log("Relationship", relationship)
+    // console.log("Relationship", relationship)
     fetch(`http://localhost:3001/users/${this.state.user.id}/carts/${relationship.id}`, {
       method: "DELETE"
     })
@@ -34,11 +34,21 @@ class App extends React.Component {
       this.setState({user: {...this.state.user, carted_items: newCartedItemssArray, carts: newCartsArray}})
     })
   }
-      
 
-
-  // :favorited_items
-
+  favoriteDeleteHandler = (favoriteObj) => {
+      // console.log("Favorited Item To Delete", favoriteObj.id)
+      let relationship = this.state.user.favorites.find(favorite => favorite.id && favorite.user_id === this.state.user.id && favorite.product_id === favoriteObj.id)
+      // console.log("Relationship", relationship)
+      fetch(`http://localhost:3001/users/${this.state.user.id}/favorites/${relationship.id}`, {
+        method: "DELETE"
+      })
+      .then(response => response.json())
+      .then(response => {
+        let newFavoritedItemsArray = this.state.user.favorited_items.filter(favoritedItems => favoritedItems.id !== favoriteObj.id)
+        let newFavoritesArray = this.state.user.favorites.filter(favorite => favorite.id !== relationship.id)
+        this.setState({user: {...this.state.user, favorited_items: newFavoritedItemsArray, favorites: newFavoritesArray}})
+      })
+  }
 
   render(){
     return(
@@ -46,7 +56,7 @@ class App extends React.Component {
         {/* <TestCard /> */}
         <UserContainer />
         <CartContainer  carts={this.state.user.carted_items} cartDeleteHandler={this.cartDeleteHandler} />
-        <FavoriteContainer />
+        <FavoriteContainer favorites={this.state.user.favorited_items} favoriteDeleteHandler={this.favoriteDeleteHandler}/>
         <ProductContainer />
       </div>
     )
