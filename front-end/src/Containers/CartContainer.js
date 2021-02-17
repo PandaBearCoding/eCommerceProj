@@ -1,16 +1,17 @@
+import { Container } from '@material-ui/core';
 import React from 'react';
 import CartCard from '../Components/CartCard.js';
 
 class CartContainer extends React.Component {
-    // state may go in app - then it would become a prop
-    state = {
-        cartApi: []
-    }
 
     renderCarts = () => {
-        return this.state.cartApi.map((el) => <CartCard key={el.id} cart={el} clickHandler={this.props.clickHandler} cartDeleteHandler={this.props.cartDeleteHandler} />)
+        return this.props.carts.map((el) => <CartCard key={el.id} cart={el} cartDeleteHandler={this.props.cartDeleteHandler} />)
     }
+
     render(){
+        if(!this.props.carts){
+            return <h1>Cart Is Loading...</h1>
+        }
         return(
             <div>
                 Cart Container

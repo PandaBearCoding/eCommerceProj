@@ -8,14 +8,14 @@ class UserContainer extends React.Component {
     }
 
     componentDidMount(){
-        fetch("http://localhost:4000/users/")
+        fetch("http://localhost:3001/users/")
         .then(response => response.json())
         .then(user => this.setState({userApi: user}))
         .catch(console.log)
     }
 
     newUserSubmitHandler = (newUser) => {
-        fetch("http://localhost:4000/users", {
+        fetch("http://localhost:3001/users", {
             method: "POST", 
             headers: {
                 "content-type": "application/json",

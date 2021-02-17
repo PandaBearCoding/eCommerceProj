@@ -7,14 +7,14 @@ class ProductContainer extends React.Component {
     }
 
     componentDidMount(){
-        fetch("http://localhost:4000/products/")
+        fetch("http://localhost:3001/products/")
         .then(response => response.json())
         .then(product => this.setState({productApi: product}))
         .catch(console.log)
     }
 
     newProductSubmitHandler = (newProduct) => {
-        fetch("http://localhost:4000/products", {
+        fetch("http://localhost:3001/products", {
             method: "POST", 
             headers: {
                 "content-type": "application/json",
@@ -34,7 +34,7 @@ class ProductContainer extends React.Component {
             price: price, 
             image: image
         }
-        fetch(`http://localhost:4000/products/${id}`, {
+        fetch(`http://localhost:3001/products/${id}`, {
             method: "PATCH", 
             headers: {
                 "content-type": "application/json",
@@ -53,7 +53,7 @@ class ProductContainer extends React.Component {
     }
 
     productDeleteHandler = (productId) => {
-        fetch(`http://localhost:4000/products/${productId}`, {
+        fetch(`http://localhost:3001/products/${productId}`, {
              method: "DELETE"
         })
         .then(response => response.json())
