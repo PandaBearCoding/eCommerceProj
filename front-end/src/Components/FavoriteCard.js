@@ -1,19 +1,22 @@
 import React from 'react';
 
 class FavoriteCard extends React.Component {
-    // add serialiers to access a favorited product
-    
+
+    localDeleteHandler = (e) => {
+        this.props.favoriteDeleteHandler(this.props.favorite)
+    }
+
     render(){
+        let { name, image } = this.props.favorite
         return(
             <div>
-                Favorite Card
-            </div>
+                <h1>{name}</h1>
+                <img alt="" src={image}/>
+                <br></br><br></br>
+                <button onClick={this.localDeleteHandler}>❌</button>
+            </div>     
         )
     }
 }
-
-
-
-
 
 export default FavoriteCard;
