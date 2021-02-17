@@ -8,7 +8,7 @@ class CartContainer extends React.Component {
     }
 
     renderCarts = () => {
-        return this.state.cartApi.map((el) => <CartCard key={el.id} cart={el} />)
+        return this.state.cartApi.map((el) => <CartCard key={el.id} cart={el} clickHandler={this.props.clickHandler} cartDeleteHandler={this.props.cartDeleteHandler} />)
     }
     render(){
         return(
