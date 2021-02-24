@@ -28,10 +28,10 @@ class UserContainer extends React.Component {
           .catch(console.log)
         }
 
-    updateUserSubmitHandler = (id, username, password, name, profile_picture, phone_number, email, address, cc_number, cc_date, cc_cvv) => {
+    updateUserSubmitHandler = (id, username, password_digest, name, profile_picture, phone_number, email, address, cc_number, cc_date, cc_cvv) => {
         let updateUser = { 
             username: username,
-            password: password,
+            password_digest: password_digest,
             name: name, 
             profile_picture: profile_picture, 
             phone_number: phone_number,

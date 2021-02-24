@@ -13,15 +13,14 @@ class UsersController < ApplicationController
     # def create
     #     user = User.create!(user_params)
     #     render json: user
-    # end 
+    # end
 
-    # takes a page refresh to show created user...
     def create
-        @user = User.create!(user_params)
-        if @user.valid?
-          render json: { user: UserSerializer.new(@user) }, status: :created
+        user = User.create!(user_params)
+        if user.valid?
+            render json: user
         else
-          render json: { error: "Failed to create user" }, status: :not_acceptable
+            render json: {error: "Failed to create user"}
         end
       end
 
@@ -55,6 +54,6 @@ class UsersController < ApplicationController
 
     private 
     def user_params
-        params.require(:user).permit(:username, :password, :name, :profile_picture, :phone_number, :email, :address, :cc_number, :cc_date, :cc_cvv)
+        params.require(:user).permit(:username, :password_digest, :name, :profile_picture, :phone_number, :email, :address, :cc_number, :cc_date, :cc_cvv)
     end
 end

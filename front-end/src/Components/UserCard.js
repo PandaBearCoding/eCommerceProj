@@ -5,7 +5,7 @@ class UserCard extends React.Component {
     state = {
         clicked: false,
         username: this.props.user.username,
-        password: this.props.user.password, 
+        password_digest: this.props.user.password_digest, 
         name: this.props.user.name, 
         profile_picture: this.props.user.profile_picture, 
         phone_number: this.props.user.phone_number,
@@ -26,7 +26,7 @@ class UserCard extends React.Component {
 
     localUpdateHandler = (e) => {
         e.preventDefault()
-        this.props.updateHandler(this.props.user.id, this.state.username, this.state.password, this.state.name, this.state.profile_picture, this.state.email, this.state.phone_number, this.state.address, this.state.cc_number, this.state.cc_cvv, this.state.cc_date)
+        this.props.updateHandler(this.props.user.id, this.state.username, this.state.password_digest, this.state.name, this.state.profile_picture, this.state.email, this.state.phone_number, this.state.address, this.state.cc_number, this.state.cc_cvv, this.state.cc_date)
         this.setState(previousState => ({
             clicked: !previousState.clicked
         }))
@@ -37,13 +37,13 @@ class UserCard extends React.Component {
     }
 
     render(){
-        let { username, password, name, profile_picture, phone_number, email, address, cc_number, cc_date, cc_cvv } = this.props.user
+        let { username, password_digest, name, profile_picture, phone_number, email, address, cc_number, cc_date, cc_cvv } = this.props.user
         return(
             <div className="userCard">
             {this.state.clicked ? (
                 <form onSubmit={this.localUpdateHandler}>
                     <input name="username" type= "text" value={this.state.username} onChange={this.changeHandler} />
-                    <input name="password" type= "text" value={this.state.password} onChange={this.changeHandler} />
+                    <input name="password_digest" type= "text" value={this.state.password_digest} onChange={this.changeHandler} />
                     <input name="name" type="text" value={this.state.name} onChange={this.changeHandler} />
                     <input name="profile_picture" type= "text" value={this.state.profile_picture} onChange={this.changeHandler} />
                     <input name="phone_number" type="text" value={this.state.phone_number} onChange={this.changeHandler} />
