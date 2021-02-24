@@ -10,10 +10,20 @@ class UsersController < ApplicationController
         render json: user, except: [:created_at, :updated_at]
     end
 
+    # def create
+    #     user = User.create!(user_params)
+    #     render json: user
+    # end 
+
+    # takes a page refresh to show created user...
     def create
-        user = User.create!(user_params)
-        render json: user
-    end 
+        @user = User.create!(user_params)
+        if @user.valid?
+          render json: { user: UserSerializer.new(@user) }, status: :created
+        else
+          render json: { error: "Failed to create user" }, status: :not_acceptable
+        end
+      end
 
     def update
         user = User.find(params[:id])

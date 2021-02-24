@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :products
   resources :users
+  post '/login', to: 'auth#create'
   get "/users/:id/carts/:id", to: "carts#show"
   post "/users/:id/carts", to: "carts#create"
   delete "/users/:id/carts/:id", to: "carts#destroy"

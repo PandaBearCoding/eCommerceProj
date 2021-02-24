@@ -41,7 +41,7 @@ class UserContainer extends React.Component {
             cc_date: cc_date,
             cc_cvv: cc_cvv
         }
-        fetch(`http://localhost:4000/users/${id}`, {
+        fetch(`http://localhost:3001/users/${id}`, {
             method: "PATCH", 
             headers: {
                 "content-type": "application/json",
@@ -60,7 +60,7 @@ class UserContainer extends React.Component {
     }
 
     userDeleteHandler = (userId) => {
-        fetch(`http://localhost:4000/users/${userId}`, {
+        fetch(`http://localhost:3001/users/${userId}`, {
              method: "DELETE"
         })
         .then(response => response.json())

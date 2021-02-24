@@ -1,9 +1,13 @@
 class User < ApplicationRecord
+    # has_secure_password
+    validates :username, uniqueness: { case_sensitive: false }
+
     has_many :carts
     has_many :products, through: :carts
     
     has_many :favorites
     has_many :products, through: :favorites
+ 
 
     # to be able to display information from the join tables, we need instance methods
 
