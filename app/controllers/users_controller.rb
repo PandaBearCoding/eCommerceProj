@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized, only: [:create]
+ 
     # to be able to view and interact with other members?
     def index
         users = User.all
@@ -12,17 +14,22 @@ class UsersController < ApplicationController
 
     # def create
     #     user = User.create!(user_params)
-    #     render json: user
-    # end
+    #     if user.valid?
+    #         render json: user
+    #     else
+    #         render json: {error: "Failed To Create User"}
+    #     end
+    #   end
 
     def create
         user = User.create!(user_params)
         if user.valid?
-            render json: user
+            @token = encode_token(user_id: user.id)
+            render json: { user: UserSerializer.new(user), jwt: @token }, status: :created
         else
-            render json: {error: "Failed To Create User"}
+            render json: { error: "Failed To Create User" }, status: :not_acceptable
         end
-      end
+    end
 
     def update
         user = User.find(params[:id])
