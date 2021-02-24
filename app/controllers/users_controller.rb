@@ -20,7 +20,7 @@ class UsersController < ApplicationController
         if user.valid?
             render json: user
         else
-            render json: {error: "Failed to create user"}
+            render json: {error: "Failed To Create User"}
         end
       end
 
@@ -54,6 +54,6 @@ class UsersController < ApplicationController
 
     private 
     def user_params
-        params.require(:user).permit(:username, :password_digest, :name, :profile_picture, :phone_number, :email, :address, :cc_number, :cc_date, :cc_cvv)
+        params.require(:user).permit(:username, :name, :profile_picture, :phone_number, :email, :address, :cc_number, :cc_date, :cc_cvv, :password_digest)
     end
 end
