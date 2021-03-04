@@ -8,16 +8,12 @@ class LogIn extends React.Component {
     render(){
         return (
             <div>
-                <div>
-                    <form>
-                        <div>
-                            {/* <img className="logInImg" alt="" src={""}/> */}
-                            <input className="logInInput" type="username" name="username" placeholder="Username" onChange={this.changeHandler} />
-                            <input className="logInInput" type="password" name="password" placeholder="Password" onChange={this.changeHandler} />
-                            <button className="logInButton" type="submit">Log In</button>
-                        </div>
-                    </form>
-                </div>
+                <form className="loginForm">
+                    {/* <img className="logInImg" alt="" src={""}/> */}
+                    <input name="username" type="text" name="username" placeholder="Username" onChange={this.changeHandler} />
+                    <input name="password" type="text" name="password" placeholder="Password" onChange={this.changeHandler} />
+                    <button className="logInButton" type="submit">Log In</button>   
+                </form>
             </div>
         );
     }

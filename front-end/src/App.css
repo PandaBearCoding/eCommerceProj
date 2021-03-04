@@ -56,28 +56,85 @@
 
 }
 
-/* Sign Up */
+/* SIGN UP */
 
 .signUpForm{
-
+  width: 200px;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
 }
 
-.signUpButton{
+input[type=text] {
+  padding:10px;
+  border: 2px;
+  margin: 5px 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
 
+input[type=number] {
+  padding:10px;
+  border: 2px;
+  margin: 5px 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input::placeholder {
+  text-align: center;
+  text-align: auto;
+} 
+
+.signUpButton{
+  border-radius: 5px;
+  background: transparent;
+  font-size: 15px;
+  /* font-family: ; */
+  font-weight: bold;
+  /* color: ; */
+}
+
+.signUpButton:hover {
+  color: black;
+  cursor: pointer;
 }
 
 /* .signUpImg{
 
 } */
 
-/* Log In */
+/* LOG IN */
 
-.logInInput{
-
+.logInForm{
+  width: 200px;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
 }
 
-.logInButton{
+input[type=text] {
+  padding:10px;
+  border: 2px;
+  margin: 5px 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
 
+input::placeholder {
+  text-align: center;
+  text-align: auto;
+} 
+
+.logInButton{
+  border-radius: 5px;
+  background: transparent;
+  font-size: 15px;
+  /* font-family: ; */
+  font-weight: bold;
+  /* color: ; */
+}
+
+.logInButton:hover {
+  color: black;
+  cursor: pointer;
 }
 
 /* .logInImg{

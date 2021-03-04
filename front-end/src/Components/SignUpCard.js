@@ -39,7 +39,7 @@ class SignUp extends React.Component {
                     <input name="cc_number" type="text" placeholder="cc number" value={this.state.cc_number} onChange={this.changeHandler} />
                     <input name="cc_date" type="text" placeholder="cc expiration date" value={this.state.cc_date} onChange={this.changeHandler} />
                     <input name="cc_cvv" type="text" placeholder="cc CVV" value={this.state.cc_cvv} onChange={this.changeHandler} />
-                    <button lassName="signUpButton">Create Profile</button>
+                    <button className="signUpButton">Create Profile</button>
                 </form>
             </div>
         )

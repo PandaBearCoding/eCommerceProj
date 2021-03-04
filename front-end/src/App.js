@@ -1,5 +1,6 @@
 // import TestCard from './Components/TestCard.js';
 import React from 'react';
+import './App.css';
 import LogInCard from './Components/LogInCard.js';
 import UserContainer from './Containers/UserContainer.js';
 import CartContainer from './Containers/CartContainer.js';
