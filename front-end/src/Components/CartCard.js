@@ -10,7 +10,7 @@ class CartCard extends React.Component {
         // console.log("CART PROPS", this.props.cart)
         let { name, image } = this.props.cart
         return(
-            <div>
+            <div className="cartCard">
                 <h1 className="cartCardH1">{name}</h1>
                 <img className="cartCardImg" alt="" src={image}/>
                 <br></br><br></br>

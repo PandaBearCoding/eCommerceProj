@@ -9,7 +9,7 @@ class FavoriteCard extends React.Component {
     render(){
         let { name, image } = this.props.favorite
         return(
-            <div>
+            <div className="favoriteCard">
                 <h1 className="favoriteCardH1">{name}</h1>
                 <img className="favoriteCardImg" alt="" src={image}/>
                 <br></br><br></br>

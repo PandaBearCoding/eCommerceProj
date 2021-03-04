@@ -1,22 +1,60 @@
-/* Cart */
+/* CART */
+.cartCard{
+  text-align: center;
+}
+
+.cartCard{
+  text-align: center;
+}
+
 .cartCardH1{
+  /* font-family: ; */
+  font-weight: bold;
+  font-size: 75px;
+  /* color: ; */
 }
 
 .cartCardImg{
+  height: 30%;
+  width: 30%;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  display: inline;
+  border-radius: 50px;
 }
 
 .cartCardButton{
+  text-align: center;
 }
 
-/* Favorite */
+
+/* FAVORITE */
+.favoriteCard{
+  text-align: center;
+}
+
 .favoriteCardH1{
+  /* font-family: ; */
+  font-weight: bold;
+  font-size: 75px;
+  /* color: ; */
 }
 
 .favoriteCardImg{
+  height: 30%;
+  width: 30%;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  display: inline;
+  border-radius: 50px;
 }
 
 .favoriteCardButton{
+  text-align: center;
 }
+
 
 /* Product */
 .productCardForm{
