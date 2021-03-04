@@ -33,9 +33,9 @@ class ProductCard extends React.Component {
     render(){
         let { name, description, price, image } = this.props.product
         return(
-            <div className="productCardForm">
+            <div className="productCard">
                 {this.state.clicked ? (
-                <form onSubmit={this.localUpdateHandler}>
+                <form className="productCardForm" onSubmit={this.localUpdateHandler}>
                     <input name="name" type= "text" value={this.state.name} onChange={this.changeHandler} />
                     <input name="description" type= "text" value={this.state.description} onChange={this.changeHandler} />
                     <input name="price" type="text" value={this.state.price} onChange={this.changeHandler} />

@@ -39,7 +39,7 @@ class UserCard extends React.Component {
     render(){
         let { username, password_digest, name, profile_picture, phone_number, email, address, cc_number, cc_date, cc_cvv } = this.props.user
         return(
-            <div>
+            <div className="userCard">
             {this.state.clicked ? (
                 <form className="updateUserForm" onSubmit={this.localUpdateHandler}>
                     <input name="username" type= "text" value={this.state.username} onChange={this.changeHandler} />

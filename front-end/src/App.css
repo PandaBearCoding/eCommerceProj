@@ -57,42 +57,84 @@
 
 
 /* Product */
-.productCardForm{
-
+.productCard{
+  text-align: center;
+  font-weight: bold;
 }
 
+/* .productCardForm{
+
+} */
+
 .productCardPs{
+  font-size: 15px;
+  color: black;
+  font-family: "Georgia", serif;
+  font-weight: bold;
 }
 
 .productCardImg{
+  transition: 0.3s;
+  height: 30%;
+  width: 30%;
+  padding: 10pix;
+  margin: 10pix;
+  text-align: center;
+  display: inline;
+  flex: 0 0 33.333333%;
+  border-radius: 50px;
 }
 
 .productCardButtons{
+  text-align: center;
 }
 
 /* User */
-.updateUserForm{
-
+.userCard{
+  text-align: center;
+  font-weight: bold;
 }
 
-.userCardH1{
+/* .updateUserForm{
 
+} */
+
+.userCardH1{
+  /* font-family: ; */
+  font-weight: bold;
+  font-size: 55px;
+  /* color: ; */
 }
 
 .userCardH3{
-
+  /* font-family: ; */
+  font-weight: bold;
+  font-size: 55px;
+  /* color: ; */
 }
 
 .userCardImg{
-
+  transition: 0.3s;
+  height: 30%;
+  width: 30%;
+  padding: 10pix;
+  margin: 10pix;
+  text-align: center;
+  display: inline;
+  flex: 0 0 33.333333%;
+  border-radius: 50px;
 }
 
 .userCardPs{
-
+  font-size: 15px;
+  color: black;
+  font-family: "Georgia", serif;
+  font-weight: bold;
 }
 .userCardButtons{
-
+  text-align: center;
 }
+
 
 /* SIGN UP */
 
