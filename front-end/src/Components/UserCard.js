@@ -39,9 +39,9 @@ class UserCard extends React.Component {
     render(){
         let { username, password_digest, name, profile_picture, phone_number, email, address, cc_number, cc_date, cc_cvv } = this.props.user
         return(
-            <div className="userCard">
+            <div>
             {this.state.clicked ? (
-                <form onSubmit={this.localUpdateHandler}>
+                <form className="updateUserForm" onSubmit={this.localUpdateHandler}>
                     <input name="username" type= "text" value={this.state.username} onChange={this.changeHandler} />
                     <input name="password_digest" type= "text" value={this.state.password_digest} onChange={this.changeHandler} />
                     <input name="name" type="text" value={this.state.name} onChange={this.changeHandler} />
@@ -57,17 +57,17 @@ class UserCard extends React.Component {
             ) :
             null
             }
-                <h1>{username}</h1>
-                <h3>{name}</h3>
-                <img alt="" src={profile_picture}/>
-                <p>Phone Number: <span>{phone_number}</span></p>
-                <p> Email: <span>{email}</span></p>
-                <p>Address: <span>{address}</span></p>
-                <p>Credit Card Number: <span>{cc_number}</span></p>
-                <p>Credit Card Date: <span>{cc_date}</span></p>
-                <p>Credit Card CVV: <span>{cc_cvv}</span></p>
-                <button onClick={this.updateClickHandler}>Edit Profile</button>
-                <button onClick={this.localDeleteHandler}>Delete Profile</button>
+                <h1 className="userCardH1">{username}</h1>
+                <h3 className="userCardH3">{name}</h3>
+                <img className="userCardImg" alt="" src={profile_picture}/>
+                <p>Phone Number: <span className="userCardPs">{phone_number}</span></p>
+                <p> Email: <span className="userCardPs">{email}</span></p>
+                <p>Address: <span className="userCardPs">{address}</span></p>
+                <p>Credit Card Number: <span className="userCardPs">{cc_number}</span></p>
+                <p>Credit Card Date: <span className="userCardPs">{cc_date}</span></p>
+                <p>Credit Card CVV: <span className="userCardPs">{cc_cvv}</span></p>
+                <button className="userCardButtons" onClick={this.updateClickHandler}>Edit Profile</button>
+                <button className="userCardButtons" onClick={this.localDeleteHandler}>Delete Profile</button>
             </div>
         )
     }

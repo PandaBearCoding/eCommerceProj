@@ -33,7 +33,7 @@ class ProductCard extends React.Component {
     render(){
         let { name, description, price, image } = this.props.product
         return(
-            <div className="productCard">
+            <div className="productCardForm">
                 {this.state.clicked ? (
                 <form onSubmit={this.localUpdateHandler}>
                     <input name="name" type= "text" value={this.state.name} onChange={this.changeHandler} />
@@ -45,12 +45,12 @@ class ProductCard extends React.Component {
             ) :
             null
             }
-                <p>Name: <span>{name}</span></p>
-                <img alt="" src={image}/>
-                <p>Description: <span>{description}</span></p>
-                <p> Price: <span>{price}</span></p>
-                <button onClick={this.updateClickHandler}>Edit Product</button>
-                <button onClick={this.localDeleteHandler}>Delete Product</button>
+                <p>Name: <span className="productCardPs">{name}</span></p>
+                <img className="productCardImg" alt="" src={image}/>
+                <p>Description: <span className="productCardPs">{description}</span></p>
+                <p> Price: <span className="productCardPs">{price}</span></p>
+                <button className="productCardButtons" onClick={this.updateClickHandler}>Edit Product</button>
+                <button className="productCardButtons" onClick={this.localDeleteHandler}>Delete Product</button>
             </div>
         )
     }

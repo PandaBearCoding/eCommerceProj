@@ -10,10 +10,10 @@ class FavoriteCard extends React.Component {
         let { name, image } = this.props.favorite
         return(
             <div>
-                <h1>{name}</h1>
-                <img alt="" src={image}/>
+                <h1 className="favoriteCardH1">{name}</h1>
+                <img className="favoriteCardImg" alt="" src={image}/>
                 <br></br><br></br>
-                <button onClick={this.localDeleteHandler}>❌</button>
+                <button className="favoriteCardButton" onClick={this.localDeleteHandler}>❌</button>
             </div>     
         )
     }

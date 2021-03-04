@@ -11,10 +11,10 @@ class CartCard extends React.Component {
         let { name, image } = this.props.cart
         return(
             <div>
-                <h1>{name}</h1>
-                <img alt="" src={image}/>
+                <h1 className="cartCardH1">{name}</h1>
+                <img className="cartCardImg" alt="" src={image}/>
                 <br></br><br></br>
-                <button onClick={this.localDeleteHandler}>❌</button>
+                <button className="cartCardButton" onClick={this.localDeleteHandler}>❌</button>
             </div>     
         )
     }
