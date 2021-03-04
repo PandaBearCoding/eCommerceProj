@@ -1,5 +1,6 @@
 // import TestCard from './Components/TestCard.js';
 import React from 'react';
+import LogInCard from './Components/LogInCard.js';
 import UserContainer from './Containers/UserContainer.js';
 import CartContainer from './Containers/CartContainer.js';
 import FavoriteContainer from './Containers/FavoriteContainer.js';
@@ -54,6 +55,7 @@ class App extends React.Component {
     return(
       <div className="App">
         {/* <TestCard /> */}
+        <LogInCard />
         <UserContainer />
         <CartContainer  carts={this.state.user.carted_items} cartDeleteHandler={this.cartDeleteHandler} />
         <FavoriteContainer favorites={this.state.user.favorited_items} favoriteDeleteHandler={this.favoriteDeleteHandler}/>
