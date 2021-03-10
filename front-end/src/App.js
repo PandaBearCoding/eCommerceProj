@@ -14,13 +14,15 @@ class App extends React.Component {
     user: {}
   }
 
-  // will need to fetch current user to access their favorites/cart
-  componentDidMount(){
-    fetch("http://localhost:3001/users/1")
-    .then(resp => resp.json())
-    .then(user => (this.setState({user: user})))
-    .catch(console.log)
-  }
+ 
+// GET current user (fetch current user to access their favorites/cart)
+
+componentDidMount() {
+  fetch("http://localhost:3001/users/13")
+  .then(resp => resp.json())
+  .then(user => (this.setState({user: user})))
+
+}
 
   cartDeleteHandler = (cartObj) => {
     // console.log("Cart Item To Delete", cartObj.id)
